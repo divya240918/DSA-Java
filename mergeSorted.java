@@ -1,5 +1,30 @@
 
-//Approach: 
+// Approach:
+// Since nums1 already has enough space (size = m + n),
+// we start filling the array from the end to avoid overwriting
+// the existing elements of nums1.
+//
+// 1. Initialize three pointers:
+//    i -> last valid element of nums1 (m - 1)
+//    j -> last element of nums2 (n - 1)
+//    k -> last index of nums1 (m + n - 1)
+//
+// 2. Compare nums1[i] and nums2[j].
+//    Place the larger element at nums1[k].
+//
+// 3. Move the corresponding pointer (i or j) and decrement k.
+//
+// 4. Repeat until one of the arrays is exhausted.
+//
+// 5. If elements are still left in nums2,
+//    copy them to nums1.
+//
+// 6. No need to copy remaining elements of nums1 because
+//    they are already in their correct positions.
+//
+// Time Complexity: O(m + n)
+// Space Complexity: O(1)
+ 
 import java.util.Scanner;
 
 public class mergeSorted {
